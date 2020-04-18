@@ -1,0 +1,11 @@
+{
+  "name": "twitter-showcase-app",
+  "version": "1.0.0",
+  "description": "Twitter Showcase App built with MERN stack and external Twitter API to fetch tweets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Swapnil Jadhav",
+  "license": "MIT"
+}
