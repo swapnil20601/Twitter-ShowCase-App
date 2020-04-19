@@ -38,7 +38,7 @@
 .content {
   position: absolute;
   top: 55px;
-  background-color: rgba(23, 13, 158, 0.3); /* Black background with 0.5 opacity */
+  background-color: rgba(23, 13, 158, 0.3);
   color: #f1f1f1;
   width: 90%;
   padding: 20px;
