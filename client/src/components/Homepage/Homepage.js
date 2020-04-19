@@ -9,10 +9,11 @@ import {
   MDBFormInline,
   MDBAnimation,
 } from "mdbreact";
+import './Home.css';
 
 const homePage = () => {
   return (
-    <div>
+    <div className='home'>
       <MDBView>
         <MDBMask className="d-flex justify-content-center align-items-center gradient">
           <MDBContainer>
