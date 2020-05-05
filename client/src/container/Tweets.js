@@ -8,10 +8,10 @@ class Tweets extends Component {
   render() {
     return (
       <>
-        <header nav class="navbar sticky-top">
+        <header className="navbar sticky-top">
           <NavBar />
         </header>
-        <main class="mt-4">
+        <main className="mt-4">
           {/* <Homepage />  */}
           <SearchTweets />
         </main>
