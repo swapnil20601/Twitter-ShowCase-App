@@ -10,7 +10,7 @@ import {
 } from "mdbreact";
 import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import classes from "./Nav.module.css";
+import "./Nav.css";
 
 const NavBar = () => {
   const [collapse, setCollapse] = useState(false);
@@ -25,67 +25,67 @@ const NavBar = () => {
   }
 
   return (
-    <Router>
-        <MDBNavbar
-        style={{ backgroundColor: "#6749DE", fontWeight: "bold", padding: '10px 10px 0px 10px'}}
-          dark
-          expand="md"
-          scrolling
-          fixed="top"
-        >
-          <MDBNavbarToggler onClick={toggleCollapseHandler} />
-          <MDBCollapse isOpen={collapse} navbar>
-            <MDBNavbarNav>
-              <MDBNavItem
-                active={activePath === "/"}
-                onClick={() => {
-                  setActivePath("/");
-                }}
-              >
-                <MDBLink
-                  to="/"
-                  className={activePath === "/" ? classes.Color : ""}
-                >
-                  Home
-                </MDBLink>
-              </MDBNavItem>
-              <MDBNavItem
-                active={activePath === "/swapnil"}
-                onClick={() => {
-                  setActivePath("/swapnil");
-                }}
-              >
-                <MDBLink
-                  to="/swapnil"
-                  className={activePath === "/swapnil" ? classes.Color : ""}
-                >
-                  Search Tweets
-                </MDBLink>
-              </MDBNavItem>
-              <MDBNavItem
-                active={activePath === "/swapnil/jadhav"}
-                onClick={() => {
-                  setActivePath("/swapnil/jadhav");
-                }}
-              >
-                <MDBLink
-                  to="/swapnil/jadhav"
-                  className={
-                    activePath === "/swapnil/jadhav" ? classes.Color : ""
-                  }
-                >
-                  Random Tweets
-                </MDBLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="#">
-                  <MDBIcon fab icon="twitter" size="2x" />
-                </MDBNavLink>
-              </MDBNavItem>
-            </MDBNavbarNav>
-          </MDBCollapse>
-        </MDBNavbar>
-    </Router>
+    <MDBNavbar
+      style={{
+        backgroundColor: "#6749DE",
+        fontWeight: "bold",
+        padding: "10px 10px 0px 10px",
+      }}
+      dark
+      expand="md"
+      scrolling
+      fixed="top"
+    >
+      <MDBNavbarToggler onClick={toggleCollapseHandler} />
+      <MDBCollapse isOpen={collapse} navbar>
+        <MDBNavbarNav>
+          <MDBNavItem
+            active={activePath === "/"}
+            onClick={() => {
+              setActivePath("/");
+            }}
+          >
+            <MDBNavLink to="/" className={activePath === "/" ? "Color" : ""}>
+              Home
+            </MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem
+            active={activePath === "/search-tweets"}
+            onClick={() => {
+              setActivePath("/search-tweets");
+            }}
+          >
+            <MDBNavLink
+              to={{
+                pathname: "/search-tweets",
+                search: '?q=nasa&result_type=recent&count=1'
+              }}
+              className={activePath === "/search-tweets" ? "Color" : ""}
+            >
+              Search Tweets
+            </MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem
+            active={activePath === "/random-tweets"}
+            onClick={() => {
+              setActivePath("/random-tweets");
+            }}
+          >
+            <MDBNavLink
+              to="/random-tweets"
+              className={activePath === "/random-tweets" ? "Color" : ""}
+            >
+              Random Tweets
+            </MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBNavLink to="#">
+              <MDBIcon fab icon="twitter" size="2x" />
+            </MDBNavLink>
+          </MDBNavItem>
+        </MDBNavbarNav>
+      </MDBCollapse>
+    </MDBNavbar>
   );
 };
 
