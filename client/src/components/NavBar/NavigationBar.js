@@ -56,10 +56,11 @@ const NavBar = () => {
             }}
           >
             <MDBNavLink
-              to={{
-                pathname: "/search-tweets",
-                search: '?q=nasa&result_type=recent&count=1'
-              }}
+              to="/search-tweets"
+              // to={{
+              //   pathname: "/search-tweets",
+              //   search: '?q=nasa&result_type=recent&count=1'
+              // }}
               className={activePath === "/search-tweets" ? "Color" : ""}
             >
               Search Tweets

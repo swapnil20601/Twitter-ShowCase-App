@@ -53,3 +53,14 @@
     min-height: 150vh;
   }
 }
+
+.title-style {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+}
+
+.text-style {
+  font-size: 18px;
+  text-align: center;
+}
