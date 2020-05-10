@@ -10,10 +10,10 @@ class Tweets extends Component {
   render() {
     return (
       <>
-        <header className="navbar sticky-top">
+        <header>
           <NavBar />
         </header>
-        <main className="mt-4">
+        <main>
           <Route path="/" exact component={Homepage} />
           <Route path="/search-tweets" exact component={SearchTweets} />
           <Route path="/random-tweets" exact component={RandomTweet} />
