@@ -4,7 +4,7 @@ import Tweets from './container/Tweets';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Tweets />
     </div>
   );

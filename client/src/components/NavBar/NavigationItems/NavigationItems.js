@@ -29,6 +29,7 @@ const NavigationItems = ({
           </div>
           {navLinks.map((link, index) => (
             <li
+              key={ index }
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(-1)}
               style={{

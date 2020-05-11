@@ -1,57 +1,7 @@
 .random .view {
   background-image: url("../../images/twitter.png");
-  background-repeat: no-repeat;
   background-size: 6in;
   background-position: center center;
-  min-height: 100vh;
-}
-
-.content {
-  position: absolute;
-  top: 55px;
-  background-color: rgba(23, 13, 158, 0.3);
-  color: #f1f1f1;
-  width: 90%;
-  padding: 20px;
-  overflow-y: scroll;
-}
-
-.align {
-  text-align: center;
-}
-
-.random h6 {
-  line-height: 1.7;
-}
-
-@media only screen and (max-width: 400px) {
-  .random .animated img {
-    max-height: 50vh;
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .random .animated img {
-    max-height: 35vh;
-    transform: translateX(-50%);
-    left: 50%;
-  }
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-  .random .animated img {
-    max-height: 50vh;
-    transform: translateX(-50%);
-    left: 50%;
-    position: relative;
-  }
-}
-@media (max-width: 1000px) and (orientation: landscape) {
-  .random .view {
-    min-height: 150vh;
-  }
 }
 
 .title-style {

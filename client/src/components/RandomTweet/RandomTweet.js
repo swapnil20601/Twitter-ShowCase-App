@@ -1,31 +1,12 @@
+import { MDBCard, MDBMask, MDBView } from "mdbreact";
 import React from "react";
-import {
-  MDBMask,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBIcon,
-  MDBInput,
-  MDBBtn,
-  MDBPopover,
-  MDBPopoverBody,
-  MDBPopoverHeader,
-  MDBView,
-  MDBCardImage,
-  MDBContainer,
-  MDBFormInline,
-  MDBAnimation,
-} from "mdbreact";
-import "./RandomTweet.css";
+import billgates from "../../images/billgates.jpg";
 import jeffBezos from "../../images/jeff-bezos.jpg";
 import sachin from "../../images/sachin.jpeg";
-import timCook from "../../images/tim-cook.jpg";
 import sundarPichai from "../../images/sundar_pichai.jpg";
-import billgates from "../../images/billgates.jpg";
+import timCook from "../../images/tim-cook.jpg";
 import PopOver from "../Popover/Popover";
+import "./RandomTweet.css";
 
 const randomTweet = () => {
   return (

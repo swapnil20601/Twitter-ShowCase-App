@@ -1,30 +1,44 @@
-import React, { Component } from 'react'
-import {
-  MDBMask,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBBtn,
-  MDBView,
-  MDBContainer,
-  MDBFormInline,
-  MDBAnimation,
-} from "mdbreact";
-import axios from 'axios';
+//import axios from "axios";
+import axios from '../../axios';
+import { MDBBtn, MDBCard, MDBCardBody, MDBFormInline, MDBMask, MDBView } from "mdbreact";
+import React, { Component } from "react";
 import "./Search.css";
 
 class SearchTweets extends Component {
-  // componentDidMount () {
-  //   axios.get("https://jsonplaceholder.typicode.com/posts").then(
-  //     response => {
-  //       console.log(response)
-  //     }
-  //   )
-  // }
+  state = {
+    posts: [],
+    searchTweets: '',
+    error: false
+  }
+
+  componentDidMount() {
+    console.log('Router props', this.props)
+    axios.get("/posts").then((response) => {
+      this.setState({posts: response.data})
+      console.log(response);
+    })
+    .catch(error => {
+      //console.log(error);
+      this.setState({error: true})
+    });
+  }
+
+  onChangeHandler = (event) => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  onSubmitHandler = (event) => {
+    event.preventDefault();
+    //send request with result_type and count
+    this.setState({searchTweets: ''})
+    event.target.reset();
+  }
 
   render() {
+    // let posts = <p style={{textAlign: "center"}}>Something went wrong!!</p>
+    // if(!this.state.error) {
+    //   then only show the tweets
+    // }
     return (
       <div className="search">
         <MDBView className="search">
@@ -35,10 +49,12 @@ class SearchTweets extends Component {
                   Search Your Favourite Personality Or Tweets
                 </h2>
                 <br></br>
-                <MDBFormInline className="responsive md-form justify-content-center">
+                <MDBFormInline className="responsive md-form justify-content-center" onSubmit={this.onSubmitHandler}>
                   <input
                     className="form-control mr-sm-2 white-text col-5"
                     type="text"
+                    name="searchTweets"
+                    onChange={this.onChangeHandler}
                   />
                   <MDBBtn
                     gradient="aqua"
@@ -56,7 +72,7 @@ class SearchTweets extends Component {
         </MDBView>
       </div>
     );
-  };
+  }
 }
 
 export default SearchTweets;
