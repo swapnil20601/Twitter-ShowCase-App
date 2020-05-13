@@ -3,20 +3,12 @@
   background-size: auto;
   background-position: center right;
   min-height: 100vh;
+  position: relative;
+  margin: 0;
 }
 
 .App h6 {
   line-height: 1.7;
-}
-
-.content {
-  position: absolute;
-  top: 55px;
-  background-color: rgba(23, 13, 158, 0.3);
-  color: #f1f1f1;
-  width: 90%;
-  padding: 20px;
-  overflow-y: auto;
 }
 
 @media only screen and (max-width: 400px) {
@@ -43,8 +35,9 @@
     position: relative;
   }
 }
-@media (max-width: 1000px) and (orientation: landscape) {
+
+@media (max-width: 2000px) and (orientation: landscape) {
   .App .view {
-    min-height: 150vh;
+    min-height: 140vh;
   }
 }
