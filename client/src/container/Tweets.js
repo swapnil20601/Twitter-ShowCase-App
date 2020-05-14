@@ -5,6 +5,7 @@ import SearchTweets from "./SearchTweets/SearchTweets";
 import RandomTweet from "../components/RandomTweet/RandomTweet";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
+import { MDBContainer } from "mdbreact";
 
 class Tweets extends Component {
   render() {
@@ -14,9 +15,11 @@ class Tweets extends Component {
           <NavBar />
         </header>
         <main>
+          <MDBContainer fluid>
             <Route path="/" exact component={Homepage} />
             <Route path="/search-tweets" exact component={SearchTweets} />
             <Route path="/random-tweets" exact component={RandomTweet} />
+          </MDBContainer>
         </main>
         <footer>
           <Footer />
