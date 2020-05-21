@@ -4,7 +4,7 @@ const router = express.Router();
 
 const tweetsController = require('../controllers/tweets');
 
-//GET /feed/posts
+//GET /api/search-tweets
 router.get('/posts', tweetsController.getTweets);
 
 //POST /feed/post

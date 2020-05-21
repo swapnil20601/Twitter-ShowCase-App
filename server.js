@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/feed", tweetRoutes);
+app.use("/api", tweetRoutes);
 
 //port
 const port = process.env.PORT || 5000;

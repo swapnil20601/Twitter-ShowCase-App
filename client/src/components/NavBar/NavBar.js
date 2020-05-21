@@ -13,11 +13,12 @@ import "./Nav.css";
 
 const NavBar = () => {
   let history = useHistory();
+
   const [collapse, setCollapse] = useState(false);
   const [activePath, setActivePath] = useState("/");
 
   useEffect(() => {
-    history.replace({ pathname: "/" });
+    history.push({ pathname: "/" });
   }, [history]);
 
   const toggleCollapseHandler = () => {
@@ -62,30 +63,26 @@ const NavBar = () => {
             </MDBNavItem>
             <MDBNavItem
               onClick={() => {
-                setActivePath("/search-tweets");
+                setActivePath("/api/search-tweets");
               }}
             >
               <MDBNavLink
-                to="/search-tweets"
-                active={activePath === "/search-tweets"}
-                // to={{
-                //   pathname: "/search-tweets",
-                //   search: '?q=nasa&result_type=recent&count=1'
-                // }}
-                className={activePath === "/search-tweets" ? "Color" : ""}
+                to="/api/search-tweets"
+                active={activePath === "/api/search-tweets"}
+                className={activePath === "/api/search-tweets" ? "Color" : ""}
               >
                 Search Tweets
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem
               onClick={() => {
-                setActivePath("/random-tweets");
+                setActivePath("/api/random-tweets");
               }}
             >
               <MDBNavLink
-                to="/random-tweets"
-                className={activePath === "/random-tweets" ? "Color" : ""}
-                active={activePath === "/random-tweets"}
+                to="/api/random-tweets"
+                className={activePath === "/api/random-tweets" ? "Color" : ""}
+                active={activePath === "/api/random-tweets"}
               >
                 Random Tweets
               </MDBNavLink>
